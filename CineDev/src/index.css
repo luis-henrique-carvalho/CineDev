@@ -1,0 +1,37 @@
+* {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #000;
+  --color-bg-variante: #981818;
+  --color-primary: #f7d354;
+  --color-primary-dark: #b8930c;
+  --color-secundary: #f70fff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light: #1f0909a9;
+
+  --transition: all 400ms ease;
+
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: 0.5s;
+}
+a:hover {
+  color: var(--color-primary-dark);
+}
