@@ -5,6 +5,8 @@ import MovieCard from "../components/MovieCard";
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
+import './MovieGrid.css'
+
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
   const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
@@ -27,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="contanier">
+    <div className="container">
       <h2 className="title">Melhores Filmes</h2>
       <div className="movies-container">
         {topMovies.length === 0 && <p>....CARREGANDO</p>}
