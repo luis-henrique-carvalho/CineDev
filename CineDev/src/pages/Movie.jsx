@@ -47,7 +47,9 @@ const Movie = () => {
     <div className="movie-page">
       {movie && (
         <>
-          <MovieCard movie={movie} showLink={false} clas={"movie2"} />
+          <div className="movie-card-div">
+            <MovieCard movie={movie} showLink={false} clas={"movie2"} />
+          </div>
           <p className="tagline">{movie.tagline}</p>
           <div className="info">
             <h3>
@@ -74,7 +76,9 @@ const Movie = () => {
             <p>{movie.overview}</p>
           </div>
 
-          <Link to={'/'}className="btn">Voltar</Link>
+          <Link to={"/"} className="btn">
+            Voltar
+          </Link>
         </>
       )}
     </div>

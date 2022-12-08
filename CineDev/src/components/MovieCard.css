@@ -46,3 +46,21 @@
   background-color: transparent;
   color: var(--color-primary);
 }
+
+@media screen and (max-width: 1024px) {
+  .movie-card {
+    width: 40%;
+  }
+  .movie2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movie-card {
+    width: 85%;
+  }
+  .movie2 {
+    width: 80%;
+  }
+}

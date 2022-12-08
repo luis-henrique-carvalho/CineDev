@@ -28,3 +28,28 @@
 .movies-btn .btn {
   min-width: 200px;
 }
+
+@media screen and (max-width: 1024px) {
+ 
+  movies-container {
+    
+  }
+
+  section {
+    margin-top: 6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movies-container {
+    justify-content: center;
+  }
+
+  .movies-btn .btn {
+    min-width: 100px;
+  }
+
+  /* section > h2{
+    margin-top: 2rem;
+  } */
+}

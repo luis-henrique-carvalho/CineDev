@@ -15,6 +15,11 @@
   text-align: center;
 }
 
+.movie-page .movie-card-div {
+  display: flex;
+  justify-content: center;
+}
+
 .movie-page .movie-card img,
 .movie-page .movie-card h2,
 .movie-page .movie-card p {
@@ -49,9 +54,6 @@
   gap: .5rem;
 }
 
-/* .description {
-  margin-bottom: 10rem;
-} */
 
 .description p {
   line-height: 1.4rem;
@@ -75,4 +77,15 @@
 .btn:hover {
   background-color: transparent;
   color: var(--color-primary);
+}
+
+@media screen and (max-width: 1024px) {
+ 
+  
+}
+
+@media screen and (max-width: 600px) {
+  .movie-page {
+    padding: 0 1rem;
+  }
 }
