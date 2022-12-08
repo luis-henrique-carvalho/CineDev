@@ -5,14 +5,14 @@ import MovieCard from "../components/MovieCard";
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-import './MovieGrid.css'
+import "./MovieGrid.css";
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
   const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
 
   const getTopRatedMovies = async (url) => {
-    axios
+    await axios
       .get(url)
       .then((res) => {
         setTopMovies(res.data.results);

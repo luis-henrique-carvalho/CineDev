@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
-import axios from 'axios'
+import axios from "axios";
 
 const searchURL = import.meta.env.VITE_SEARCH;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -9,14 +9,13 @@ const apiKey = import.meta.env.VITE_API_KEY;
 import "./MovieGrid.css";
 
 const Search = () => {
-
   const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
 
   const query = searchParams.get("q");
 
   const getSearchMovies = async (url) => {
-    axios
+    await axios
       .get(url)
       .then((res) => {
         setMovies(res.data.results);
@@ -29,7 +28,6 @@ const Search = () => {
 
     getSearchMovies(searchWithQueryURL);
   }, [query]);
-
 
   return (
     <div className="container">
