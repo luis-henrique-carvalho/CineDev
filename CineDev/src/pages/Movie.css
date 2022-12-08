@@ -37,6 +37,11 @@
   gap: 0.4rem;
 }
 
+.details{
+  display: flex;
+  justify-content: space-between;
+}
+
 .tagline {
   text-align: center;
   font-size: 1.3rem;
@@ -45,6 +50,14 @@
 
 .info {
   margin-bottom: 1.5rem;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  flex-wrap: wrap;
+  max-width: 10rem;
 }
 
 .info h3 {

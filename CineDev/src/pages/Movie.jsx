@@ -7,7 +7,13 @@ import {
   BsHourglassSplit,
   BsFileEarmarkTextFill,
   BsWallet,
+  BsFilm,
+  BsFillTrophyFill,
 } from "react-icons/bs";
+
+import {
+  FaRocket
+} from "react-icons/fa";
 
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -41,6 +47,8 @@ const Movie = () => {
     });
   };
 
+ 
+
   console.log(movie);
 
   return (
@@ -51,24 +59,53 @@ const Movie = () => {
             <MovieCard movie={movie} showLink={false} clas={"movie2"} />
           </div>
           <p className="tagline">{movie.tagline}</p>
-          <div className="info">
-            <h3>
-              <BsWallet2 /> Orçamento
-            </h3>
-            <p>{formatCurrency(movie.budget)}</p>
+          <div className="details">
+            <div>
+              <div className="info">
+                <h3>
+                  <BsWallet2 /> Orçamento
+                </h3>
+                <p>{formatCurrency(movie.budget)}</p>
+              </div>
+              <div className="info">
+                <h3>
+                  <BsGraphUp /> Receita:
+                </h3>
+                <p>{formatCurrency(movie.revenue)}</p>
+              </div>
+              <div className="info">
+                <h3>
+                  <BsHourglassSplit /> Duração:
+                </h3>
+                <p>{movie.runtime} Minutos</p>
+              </div>
+            </div>
+            <div>
+              <div className="info">
+                <h3>
+                  <BsFillTrophyFill /> Popularidade:
+                </h3>
+                <p>N: {movie.popularity}</p>
+              </div>
+              <div className="info">
+                <h3>
+                  <FaRocket /> Lançamento:
+                </h3>
+                <p> {movie.release_date}</p>
+              </div>
+              <div className="info">
+                <h3>
+                  <BsFilm /> Genero:
+                </h3>
+                <div className="genres">
+                  {movie.genres.map((gen) => (
+                    <p key={gen.id}>{gen.name}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="info">
-            <h3>
-              <BsGraphUp /> Receita:
-            </h3>
-            <p>{formatCurrency(movie.revenue)}</p>
-          </div>
-          <div className="info">
-            <h3>
-              <BsHourglassSplit /> Duração:
-            </h3>
-            <p>{movie.runtime} Minutos</p>
-          </div>
+
           <div className="info description">
             <h3>
               <BsFileEarmarkTextFill /> Descrição
