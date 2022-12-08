@@ -9,6 +9,10 @@
   padding: 1rem;
 }
 
+.movie2 {
+  width: 100%;
+}
+
 .movie-card img {
   max-width: 100%;
 }

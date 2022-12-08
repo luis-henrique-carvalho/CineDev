@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import {
   BsGraphUp,
@@ -30,7 +30,7 @@ const Movie = () => {
   };
 
   useEffect(() => {
-    const movieURL = `${moviesURL}${id}?${apiKey}`;
+    const movieURL = `${moviesURL}${id}?${apiKey}&language=pt-br`;
     getMovie(movieURL);
   }, []);
 
@@ -47,7 +47,7 @@ const Movie = () => {
     <div className="movie-page">
       {movie && (
         <>
-          <MovieCard movie={movie} showLink={false} />
+          <MovieCard movie={movie} showLink={false} clas={"movie2"} />
           <p className="tagline">{movie.tagline}</p>
           <div className="info">
             <h3>
@@ -73,6 +73,8 @@ const Movie = () => {
             </h3>
             <p>{movie.overview}</p>
           </div>
+
+          <Link to={'/'}className="btn">Voltar</Link>
         </>
       )}
     </div>

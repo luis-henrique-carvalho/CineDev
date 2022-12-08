@@ -3,19 +3,28 @@
   font-size: 2.5rem;
   text-align: center;
   margin: 2rem 0 1rem;
-
 }
 
-.title .query-text{
+.title .query-text {
   color: var(--color-primary);
 }
 
 .movies-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.movies-btn {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+.movies-btn .btn {
+  min-width: 200px;
+}

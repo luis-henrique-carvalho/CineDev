@@ -5,9 +5,9 @@ import "./MovieCard.css";
 
 const imageUrl = import.meta.env.VITE_IMG;
 
-const MovieCard = ({ movie, showLink = true }) => {
+const MovieCard = ({ movie, showLink = true, clas = null }) => {
   return (
-    <div className="movie-card">
+    <div className={`movie-card ${clas}`}>
       <img src={imageUrl + movie.poster_path} alt={movie.title} />
       <h2>{movie.title}</h2>
       <p>
