@@ -5,9 +5,6 @@ import MovieCard from "../components/MovieCard";
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-// https://api.themoviedb.org/3/movie/
-// api_key=690df2b308643dd89fa1dfa90004c12a
-
 import "./MovieGrid.css";
 import PagesButton from "../components/PagesButton";
 
@@ -25,7 +22,6 @@ const Home = () => {
       .catch();
   };
 
-  // console.log(topMovies);
 
   useEffect(() => {
     const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-br-US&page=${page}`;

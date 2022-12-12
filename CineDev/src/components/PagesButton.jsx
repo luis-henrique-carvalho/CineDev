@@ -1,4 +1,5 @@
 import React from "react";
+import "./PagesButton.css";
 
 const PagesButton = ({ page = null, setPage = null }) => {
   const handleButton = (action) => {
@@ -16,20 +17,22 @@ const PagesButton = ({ page = null, setPage = null }) => {
   return (
     <div className="movies-btn">
       {page && page > 1 ? (
-        <>
+        <div className="pages_btn">
           <button className="btn" onClick={() => handleButton("prev")}>
             Pagina Anterior
           </button>
+          <h2>{page} de max</h2>
           <button className="btn" onClick={() => handleButton("next")}>
             Proxima Página
           </button>
-        </>
+        </div>
       ) : (
-        <>
+        <div className="pages_btn">
+          
           <button className="btn" onClick={() => handleButton("next")}>
             Proxima Página
           </button>
-        </>
+        </div>
       )}
     </div>
   );

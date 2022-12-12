@@ -23,10 +23,12 @@
   gap: 1rem;
   margin: 2rem auto;
   justify-content: center;
+  align-items: center;
 }
 
 .movies-btn .btn {
   min-width: 200px;
+  
 }
 
 @media screen and (max-width: 1024px) {
