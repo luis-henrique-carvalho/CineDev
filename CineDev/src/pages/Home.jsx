@@ -11,6 +11,7 @@ import PagesButton from "../components/PagesButton";
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState();
 
   const getTopRatedMovies = async (url) => {
     await axios
@@ -18,10 +19,10 @@ const Home = () => {
       .then((res) => {
         console.log(res.data.page);
         setTopMovies(res.data.results);
+        setTotalPages(res.data.total_pages);
       })
       .catch();
   };
-
 
   useEffect(() => {
     const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-br-US&page=${page}`;
@@ -37,7 +38,7 @@ const Home = () => {
         {topMovies.length > 0 &&
           topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
-      <PagesButton page={page} setPage={setPage} />
+      <PagesButton page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );
 };

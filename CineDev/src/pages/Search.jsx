@@ -15,6 +15,7 @@ const Search = () => {
   const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState();
   const [loadgin, setLoadin] = useState(false);
   const query = searchParams.get("q");
 
@@ -27,6 +28,7 @@ const Search = () => {
       .then((res) => {
         setMovies(res.data.results);
         console.log(res.data);
+        setTotalPages(res.data.total_pages)
       })
       .catch();
     setLoadin(false);
@@ -49,7 +51,7 @@ const Search = () => {
         {movies.length > 0 &&
           movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
-      <PagesButton page={page} setPage={setPage} />
+      <PagesButton page={page} setPage={setPage} totalPages={totalPages}/>
     </div>
   );
 };
